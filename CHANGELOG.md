@@ -1,7 +1,67 @@
-# 1.1.0 (02.11.2016)
+# 1.4.0 (15.12.2016)
 
-* [Github Milestone](https://github.com/serverless/serverless/milestone/15)
-* [Comparison since last release](https://github.com/serverless/serverless/compare/v1.0.3...v1.1.0)
+## Features
+* [Alexa event support](https://github.com/serverless/serverless/issues/2875) (#2875)
+* [New C# service template](https://github.com/serverless/serverless/blob/master/docs/providers/aws/events/alexa-skill.md) (#2858)
+* [Local Invoke Improvements](https://github.com/serverless/serverless/pull/2865) (#2865)
+* [Service wide metrics](https://github.com/serverless/serverless/blob/master/docs/providers/aws/cli-reference/metrics.md) (#2846)
+* [Install service by pointing to a Github directory](https://github.com/serverless/serverless/issues/2721) (#2721)
+* [Add support for stdin for invoke & invoke local](https://github.com/serverless/serverless/blob/master/docs/providers/aws/cli-reference/invoke.md#function-invocation-with-data-from-standard-input) (#2894)
+
+## Bug Fixes
+* Fixed exit code for failed function invocations (#2836)
+* Stricter validation for custom IAM statements (#2132)
+* Fixed bug in credentials setup (#2878)
+* Removed unnecessary warnings during Serverless installation (#2811)
+* Removed request and response config when using proxy integration (#2799)
+* Internal refactoring
+
+## Meta
+* [Github Milestone](https://github.com/serverless/serverless/milestone/18?closed=1)
+* [Comparison since last release](https://github.com/serverless/serverless/compare/v1.3.0...v1.4.0)
+
+# 1.3.0 (02.12.2016)
+
+## Features
+* [Metrics support](https://serverless.com/framework/docs/providers/aws/cli-reference/metrics/) (#1650)
+* [AWS credential setup command](https://serverless.com/framework/docs/providers/aws/cli-reference/config/) (#2623)
+* Lambda versioning on each deploy (#2676)
+
+## Improvements
+* Documentation improvements with `serverless.yml` file reference (#2703)
+* Display info how to use SLS_DEBUG (#2690)
+* Drop `event.json` file on service creation (#2786)
+* Refactored test structure (#2464)
+* Automatic test detection (#1337)
+
+## Bug Fixes
+* Add DependsOn for Lamda functions and IamPolicyLambdaExecution (#2743)
+* Add JSON data parsing for invoke command (#2685)
+* Internal refactoring
+
+## Meta
+* [Github Milestone](https://github.com/serverless/serverless/milestone/17?closed=1)
+* [Comparison since last release](https://github.com/serverless/serverless/compare/v1.2.1...v1.3.0)
+
+# 1.2.0 (22.11.2016)
+
+## Features
+* [Lambda environment variables support](https://serverless.com/framework/docs/providers/aws/guide/functions#environment-variables) (#2748)
+* [Load Serverless variables from javascript files](https://serverless.com/framework/docs/providers/aws/guide/variables#reference-variables-in-javascript-files) (#2495)
+* [Add support for setting custom IAM roles for functions](https://serverless.com/framework/docs/providers/aws/guide/iam#custom-iam-roles-for-each-function) (#1807)
+* Lambda environment variables support in Invoke Local (#2757)
+* Tighter and secure permissions for event sources (#2023)
+
+## Bug Fixes
+* Fix `--noDeploy` flag to generate deployment files offline without needing internet connection (#2648)
+* Bring back the `include` packaging feature with the help of globs (#2460)
+* Internal refactoring
+
+## Meta
+* [Github Milestone](https://github.com/serverless/serverless/milestone/16?closed=1)
+* [Comparison since last release](https://github.com/serverless/serverless/compare/v1.1.0...v1.2.0)
+
+# 1.1.0 (02.11.2016)
 
 ## Future breaking changes
 We will include the LogGroup for your Lambda function in the CloudFormation template in the future. This will break deployments to existing applications because the log group was already created. You will get a warning about this if you deploy currently. We will force this behaviour in a future release, for now you can set it through the `cfLogs: true` parameter in your provider config. This change will also limit the logging rights to only this LogGroup, which should have no impact on your environment. You can read more in [our docs](https://serverless.com/framework/docs/providers/aws/guide/functions#log-group-resources).
@@ -25,6 +85,10 @@ We will include the LogGroup for your Lambda function in the CloudFormation temp
 
 ## Other
 * [Large documentation refactoring](https://serverless.com/framework/docs/) (#2527)
+
+## Meta
+* [Github Milestone](https://github.com/serverless/serverless/milestone/15)
+* [Comparison since last release](https://github.com/serverless/serverless/compare/v1.0.3...v1.1.0)
 
 # 1.0.3 (21.10.2016)
 
